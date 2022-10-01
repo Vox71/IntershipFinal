@@ -1,0 +1,16 @@
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\bin\Debug\net5.0\IntershipFinal0.1.exe
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\bin\Debug\net5.0\IntershipFinal0.1.deps.json
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\bin\Debug\net5.0\IntershipFinal0.1.runtimeconfig.json
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\bin\Debug\net5.0\IntershipFinal0.1.runtimeconfig.dev.json
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\bin\Debug\net5.0\IntershipFinal0.1.dll
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\bin\Debug\net5.0\ref\IntershipFinal0.1.dll
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\bin\Debug\net5.0\IntershipFinal0.1.pdb
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.csproj.AssemblyReference.cache
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.AssemblyInfoInputs.cache
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.AssemblyInfo.cs
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.csproj.CoreCompileInputs.cache
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.dll
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\ref\IntershipFinal0.1.dll
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.pdb
+C:\Users\mikel\Desktop\IntershipFinal0.1\IntershipFinal0.1\obj\Debug\net5.0\IntershipFinal0.1.genruntimeconfig.cache
