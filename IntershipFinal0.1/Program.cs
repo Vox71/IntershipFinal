@@ -27,8 +27,6 @@ namespace IntershipFinal0._1
             uniques = new List<Unique>();
 
             Random rand = new Random();
-
-            //Создание работяг
             for (int i = 0; i < Workers; i++)
             {
                 switch (rand.Next(2))
@@ -51,8 +49,6 @@ namespace IntershipFinal0._1
                         break;
                 }
             }
-
-            //Создание варов
             for (int i = 0; i < Warriors; i++)
             {
                 switch (rand.Next(2))
@@ -214,24 +210,24 @@ namespace IntershipFinal0._1
 
     public class Worker : StartAnt
     {
-        public int takeTwig { get; set; }
-        public int takeStone { get; set; }
-        public int takeLeaf { get; set; }
-        public int takeDew { get; set; }
-        public int maxTaken { get; set; }
-        public int takenRes { get; set; }
-        public int version { get; set; }
+        public int TakeTwig { get; set; }
+        public int TakeStone { get; set; }
+        public int TakeLeaf { get; set; }
+        public int TakeDew { get; set; }
+        public int MaxTaken { get; set; }
+        public int TakenRes { get; set; }
+        public int Version { get; set; }
         public Worker(string Color, int NumOfColony, int Hp, int Dodge, int Def,
             int Dm, int TakeTwig, int TakeStone, int TakeLeaf, int TakeDew,
             int MaxTaken, int TakenRes, int Version) : base(Color, NumOfColony, Hp, Dodge, Def, Dm)
         {
-            takeTwig = TakeTwig;
-            takeStone = TakeStone;
-            takeLeaf = TakeLeaf;
-            takeDew = TakeDew;
-            maxTaken = MaxTaken;
-            takenRes = TakenRes;
-            version = Version;
+            this.TakeTwig = TakeTwig;
+            this.TakeStone = TakeStone;
+            this.TakeLeaf = TakeLeaf;
+            this.TakeDew = TakeDew;
+            this.MaxTaken = MaxTaken;
+            this.TakenRes = TakenRes;
+            this.Version = Version;
         }
     }
     public class Larva
@@ -266,18 +262,18 @@ namespace IntershipFinal0._1
     {
         public int minDays { get; set; }
         public int maxDays { get; set; }
-        public int minNewQweens { get; set; }
-        public int maxNewQweens { get; set; }
-        public int nowNewQweens { get; set; }
+        public int MinNewQueens { get; set; }
+        public int MaxNewQueens { get; set; }
+        public int NowNewQueens { get; set; }
         public Queen(string Color, int NumOfColony, int Hp, int Dodge, int Def,
-            int Dm, int MinDays, int MaxDays, int MinNewQweens, int MaxNewQweens,
-            int NowNewQweens) : base(Color, NumOfColony, Hp, Dodge, Def, Dm)
+            int Dm, int MinDays, int MaxDays, int MinNewQueens, int MaxNewQueens,
+            int NowNewQueens) : base(Color, NumOfColony, Hp, Dodge, Def, Dm)
         {
             minDays = MinDays;
             maxDays = MaxDays;
-            minNewQweens = MinNewQweens;
-            maxNewQweens = MaxNewQweens;
-            nowNewQweens = NowNewQweens;
+            this.MinNewQueens = MinNewQueens;
+            this.MaxNewQueens = MaxNewQueens;
+            this.NowNewQueens = NowNewQueens;
         }
     }
     public class Stack
@@ -319,26 +315,24 @@ namespace IntershipFinal0._1
         static void Main(string[] args)
         {
             Random rand = new Random();
+            Colony GreenColony = new Colony("green", 0, 1, 0, 15, 9, 1, 
+                0, 0, 0, 0);
+            Colony BlackColony = new Colony("black", 1, 1, 0, 18, 9, 1, 
+                0, 0, 0, 0);
+            Colony RedColony = new Colony("red", 2, 1, 0, 14, 5, 1, 
+                0, 0, 0, 0);
 
-            //Начальные статы колонии
-            Colony GreenColony = new Colony("green", 0, 1, 0, 15, 9, 1, 0, 0, 0, 0);
-            Colony BlackColony = new Colony("black", 1, 1, 0, 18, 9, 1, 0, 0, 0, 0);
-            Colony RedColony = new Colony("red", 2, 1, 0, 14, 5, 1, 0, 0, 0, 0);
-
-            //Начальные кучки
             Stack FirstStack = new Stack(14, 19, 0, 0);
             Stack SecondStack = new Stack(49, 0, 23, 0);
             Stack ThirdStack = new Stack(36, 0, 26, 15);
             Stack FourthStack = new Stack(23, 0, 10, 33);
             Stack FifthStack = new Stack(46, 0, 0, 40);
 
-            //Пихаю все в один лист
             List<Colony> AllColonies = new List<Colony>();
             AllColonies.Add(GreenColony);
             AllColonies.Add(BlackColony);
             AllColonies.Add(RedColony);
 
-            //Сую кучи в мега-кучу
             List<Stack> AllStacks = new List<Stack>();
             AllStacks.Add(FirstStack);
             AllStacks.Add(SecondStack);
@@ -445,7 +439,6 @@ namespace IntershipFinal0._1
                 $"\n");
         }
 
-        //Ролю кол-во работяг на кучах
         public static void ShortWorkersRoll(Colony colony, Stack stack)
         {
             Random rand = new Random();
@@ -456,8 +449,6 @@ namespace IntershipFinal0._1
                 colony.Workers.Remove(colony.Workers[0]);
             }
         }
-
-        //Ролю кол-во варов на кучах 
         public static void ShortWarriorsRoll(Colony colony, Stack stack)
         {
             Random rand = new Random();
@@ -493,7 +484,6 @@ namespace IntershipFinal0._1
             }
         }
 
-        //Новая мультиатака
         public static void RollForNumTargets(Stack stack, Warrior warrior, ref int i)
         {
             Random rand = new Random();
@@ -595,7 +585,6 @@ namespace IntershipFinal0._1
             }
         }
 
-        //Ролл атаки на рабочих
         public static void RollWorkersOnFight(Stack stack, Warrior warrior, ref int i)
         {
             Random rand = new Random();
@@ -621,7 +610,6 @@ namespace IntershipFinal0._1
             RollForNumTargets(stack, warrior, ref i);
         }
 
-        //Ролл атаки на войнов
         public static void RollWarriorsOnFight(Stack stack, Warrior warrior, ref int i)
         {
             Random rand = new Random();
@@ -688,7 +676,6 @@ namespace IntershipFinal0._1
             RollForNumTargets(stack, warrior, ref i);
         }
 
-        //Смертельная битва
         public static void Fight(Stack stack)
         {
             Random rand = new Random();
@@ -763,50 +750,48 @@ namespace IntershipFinal0._1
                 }
             }
         }
-
-        //Сбор ресурсов
         public static void Farm(Stack stack, List<Colony> AllColonies)
         {
 
             foreach (Worker worker in stack.workers)
             {
-                if (worker.takeTwig > 0 && stack.twig > 0)
+                if (worker.TakeTwig > 0 && stack.twig > 0)
                 {
-                    while (worker.takenRes < worker.takeTwig && worker.takenRes < worker.maxTaken && stack.twig > 0)
+                    while (worker.TakenRes < worker.TakeTwig && worker.TakenRes < worker.MaxTaken && stack.twig > 0)
                     {
-                        worker.takenRes++;
+                        worker.TakenRes++;
                         AllColonies[worker.numOfColony].twig++;
                         stack.twig--;
                     }
                 }
-                else if (worker.maxTaken > worker.takenRes && (worker.takeStone > 0 && stack.stone > 0))
+                else if (worker.MaxTaken > worker.TakenRes && (worker.TakeStone > 0 && stack.stone > 0))
                 {
-                    while (worker.takenRes < worker.takeStone && worker.takenRes < worker.maxTaken && stack.stone > 0)
+                    while (worker.TakenRes < worker.TakeStone && worker.TakenRes < worker.MaxTaken && stack.stone > 0)
                     {
-                        worker.takenRes++;
+                        worker.TakenRes++;
                         AllColonies[worker.numOfColony].stone++;
                         stack.stone--;
                     }
                 }
-                else if (worker.maxTaken > worker.takenRes && (worker.takeLeaf > 0 && stack.leaf > 0))
+                else if (worker.MaxTaken > worker.TakenRes && (worker.TakeLeaf > 0 && stack.leaf > 0))
                 {
-                    while (worker.takenRes < worker.takeLeaf && worker.takenRes < worker.maxTaken && stack.leaf > 0)
+                    while (worker.TakenRes < worker.TakeLeaf && worker.TakenRes < worker.MaxTaken && stack.leaf > 0)
                     {
-                        worker.takenRes++;
+                        worker.TakenRes++;
                         AllColonies[worker.numOfColony].leaf++;
                         stack.leaf--;
                     }
                 }
-                else if (worker.maxTaken > worker.takenRes && (worker.takeDew > 0 && stack.dew > 0))
+                else if (worker.MaxTaken > worker.TakenRes && (worker.TakeDew > 0 && stack.dew > 0))
                 {
-                    while (worker.takenRes < worker.takeDew && worker.takenRes < worker.maxTaken && stack.dew > 0)
+                    while (worker.TakenRes < worker.TakeDew && worker.TakenRes < worker.MaxTaken && stack.dew > 0)
                     {
-                        worker.takenRes++;
+                        worker.TakenRes++;
                         AllColonies[worker.numOfColony].dew++;
                         stack.dew--;
                     }
                 }
-                worker.takenRes = 0;
+                worker.TakenRes = 0;
             }
         }
 
@@ -973,7 +958,6 @@ namespace IntershipFinal0._1
                 AddNewLarva(AllColonies[i]);
                 GrownCheckLarva(AllColonies[i], AllColonies);
             }
-
         }
 
         private static void GrownCheckLarva(Colony colony, List<Colony> AllColonies)
@@ -982,7 +966,6 @@ namespace IntershipFinal0._1
             {
                 if (colony.Larva[i].presentTime >= colony.Larva[i].allTime)
                 {
-                    // ролл на чела
                     CreateNewAnt(colony, colony.Larva[i], AllColonies);
                     colony.Larva.Remove(colony.Larva[i]); i--;
                 }
@@ -990,7 +973,6 @@ namespace IntershipFinal0._1
             }
         }
 
-        //Ролл на создание
         private static void CreateNewAnt(Colony colony, Larva larva, List<Colony> AllColonies)
         {
             Random rand = new Random();
@@ -1037,10 +1019,11 @@ namespace IntershipFinal0._1
                     }
                     break;
                 case 6:
-                    if (colony.Queen[0].maxNewQweens > colony.Queen[0].nowNewQweens)
+                    if (colony.Queen[0].MaxNewQueens > colony.Queen[0].NowNewQueens)
                     {
-                        AllColonies.Add(new Colony(larva.color, AllColonies.Count, 1, 0, 12, 8, 4, 0, 0, 0, 0));
-                        colony.Queen[0].nowNewQweens++;
+                        AllColonies.Add(new Colony(larva.color, AllColonies.Count, 1, 0, 12, 
+                            8, 4, 0, 0, 0, 0));
+                        colony.Queen[0].NowNewQueens++;
                     }
                     break;
                 case 7:
